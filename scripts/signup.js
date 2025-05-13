@@ -1,4 +1,12 @@
+//existing User
+
+// var value = localStorage.getItem("skillupUser")
+// if(value){
+//     window.location.href="../pages/homePage.html"
+// }
+
 document.getElementById("btn").addEventListener("click", function (event) {
+
     event.preventDefault()
 
     setTimeout(() => {
@@ -100,7 +108,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
 
 
                     async function postData() {
-                        
+
                         let objdata = {
                             email: email,
                             name: name,
@@ -108,7 +116,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
                             enrolledCourses: []
                         };
 
-                       
+
                         try {
                             let response = await fetch('https://68218af0259dad2655af8849.mockapi.io/skillup/users', {
                                 method: 'POST',
@@ -120,21 +128,18 @@ document.getElementById("btn").addEventListener("click", function (event) {
 
                             if (response.ok) {
                                 let data = await response.json();
-                                console.log('✅ Data posted:', data);
+                                console.log(' Data posted:', data);
+                                window.location.href = "../pages/login.html"
                             } else {
-                                console.log('❌ Failed to post data');
+                                console.log(' Failed to post data');
                             }
                         } catch (error) {
-                            console.log('🚨 Error:', error);
+                            console.log(' Error:', error);
                         }
                     }
 
-              
+
                     postData();
-
-
-
-
 
 
                 }

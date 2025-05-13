@@ -1,0 +1,160 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+
+}
+
+.navBarDiv {
+    width: 18%;
+    height: 100vh;
+    background-color: #9391e3;
+    position: fixed;
+}
+
+.contentDiv {
+    width: 82%;
+    height: 100vh;
+    margin-left: 18%;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+
+.log {
+
+
+    height: 80px;
+    width: 99%;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    .logoImg {
+
+        height: 60px;
+        width: 25%;
+        border-radius: 10px;
+        margin-left: 25px;
+        background-color: aliceblue;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    h2 {
+        color: white;
+        font-family: 'Trebuchet MS',
+            'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+        margin-left: 10px;
+
+    }
+
+}
+
+
+.navLinks {
+
+    height: auto;
+    width: 99%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.navLink {
+
+    margin-bottom: 40px;
+    color: white;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+
+
+.courseData {
+
+    height: 360px;
+    width: 310px;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    margin-top: 40px;
+    margin-left: 40px;
+    background-color: #c6c6f1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+   
+    
+
+
+    .courseImgDiv {
+        width: 75%;
+        height: 200px;
+        border: 1px solid black;
+        margin-top: 10px;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+
+        img {
+            width: 80%;
+            height: 80%;
+            border-radius: 10px
+        }
+    }
+
+    .courseTitle {
+        width: 85%;
+        height: 50px;
+        margin-top: 10px;
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+    }
+    .courseDesc{
+        width: 85%;
+        height: 50px;
+        margin-top: 10px;
+        font-size: 15px;
+        font-family:'Times New Roman', Times, serif;
+        color: rgb(63, 62, 62);
+       
+    }
+
+}
+
+.courseData:hover {
+  animation: pulse 1s ease-in-out;
+  transform: scale(1.03);
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+
+}
