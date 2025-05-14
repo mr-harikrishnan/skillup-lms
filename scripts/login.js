@@ -1,9 +1,9 @@
 //existing User
 
-// var value = localStorage.getItem("skillupUser")
-// if(value){
-//     window.location.href="../pages/homePage.html"
-// }
+var value = localStorage.getItem("skillupUser")
+if(value){
+    window.location.href="../pages/userCourse.html"
+}
 
 
 
@@ -62,13 +62,13 @@ document.getElementById("btn").addEventListener("click", function (event) {
     if (isEmail && isPassword) {
 
         async function getDataByEmailApi(email) {
-            return fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/users?email=${email}`, {
+            return fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/users`, {
                 method: "GET"
             })
 
         }
 
-        async function getData() {
+        async function getData() {            //problem
             try {
 
                 var userData = await getDataByEmailApi(email)
@@ -76,19 +76,30 @@ document.getElementById("btn").addEventListener("click", function (event) {
 
                 if (userData.status == 200) {
 
-                    if (data[0].role == "ADMIN") {
-                        localStorage.setItem("skillupUser", JSON.stringify(email))
+                    var resDta = data.find(function (userDta) {
+                        return userDta.email == email
+                    })
 
-                        window.location.href = "../pages/admin.html"
+                    if (resDta) {
+                        if (resDta.password == password) {
+                            if(resDta.role == "ADMIN"){
+                                window.location.href="../pages/admin/course.html"
+                            }
+                            else{
+                                window.location.href="../pages/user/course.html"
+                                localStorage.setItem("skillupUser", JSON.stringify(email))
+                            }
+                        }
+                        else {
+                            passwordError.textContent = "Incorrect Password"
 
+                        }
+                    }
+                    else{
+                        emailError.textContent="Email not found please register"
                     }
 
-                    else {
-                        localStorage.setItem("skillupUser", JSON.stringify(email))
 
-                        window.location.href = "../pages/homePage.html"
-
-                    }
 
                 }
                 else if (userData.status == 404) {

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Course</title>
+    <link rel="stylesheet" href="../../styles/courseAddForm.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="formDiv">
+            <h2>Add New Course</h2>
+            <form action="">
+                <input type="text" placeholder="Course Title" id="courseTitle" />
+                <input type="text" placeholder="Description" id="description" />
+                <input type="text" placeholder="Category" id="category" />
+                <input type="text" placeholder="Thumbnail URL" id="thumbnailUrl" />
+
+                <div class="moduleDiv">
+
+                    <div class="module">
+
+
+                        <h3>Module <span id="moduleCount">1</span></h3>
+                        <input type="text" placeholder="Module 1 Title" />
+
+                        <div class="resourcesDiv">
+
+                            <div class="resources">
+                                <h4>Resources <span>1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" />
+                                <input type="text" placeholder="Resource 1 URL" />
+
+                            </div>
+
+                        </div>
+                        <button id="addResources">ADD RESOURCES</button>
+
+
+                    </div>
+
+                    
+                </div>
+
+<button id="addModule">ADD MODULE</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        var addRes = document.getElementById("addResources")
+
+        addRes.addEventListener("click", function (e) {
+            e.preventDefault()
+            var resourcesDiv = document.querySelector(".resourcesDiv")
+
+            resourcesDiv.innerHTML += `
+                            <div class="resources">
+                                <h4>Resources <span>1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" />
+                                <input type="text" placeholder="Resource 1 URL" />
+
+                            </div>
+
+            `
+
+        })
+
+
+      
+        var addMod = document.getElementById("addModule")
+
+        addMod.addEventListener("click", function (e) {
+            e.preventDefault()
+            var moduleDiv = document.querySelector(".moduleDiv")
+
+            moduleDiv.innerHTML += `
+                            <div class="module">
+
+
+                        <h3>Module <span id="moduleCount">1</span></h3>
+                        <input type="text" placeholder="Module 1 Title" />
+
+                        <div class="resourcesDiv">
+
+                            <div class="resources">
+                                <h4>Resources <span>1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" />
+                                <input type="text" placeholder="Resource 1 URL" />
+
+                            </div>
+
+                        </div>
+                        <button id="addResources">ADD RESOURCES</button>
+
+
+                    </div>
+            `
+
+        })
+
+    </script>
+</body>
+
+</html>

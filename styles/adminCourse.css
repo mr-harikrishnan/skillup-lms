@@ -1,6 +1,9 @@
 * {
     margin: 0px;
     padding: 0px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .container {
@@ -10,16 +13,16 @@
 }
 
 .navBarDiv {
-    width: 18%;
+    width: 15%;
     height: 100vh;
     background-color: #9391e3;
     position: fixed;
 }
 
 .contentDiv {
-    width: 82%;
+    width: 85%;
     height: 100vh;
-    margin-left: 18%;
+    margin-left: 15%;
     display: flex;
     flex-wrap: wrap;
 
@@ -78,7 +81,48 @@
 
     margin-bottom: 40px;
     color: white;
-    a{
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/* ------------------------------------------------ */
+
+.allCourses {
+    height: 8%;
+    width: 85%;
+    position: fixed;
+    z-index: 10000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.allCourses2 {
+    height: 7%;
+    width: 100%;
+
+}
+
+
+.addNewCourse {
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9391e3;
+    color: white;
+    cursor: pointer;
+    
+
+    p{
+        font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
         color: white;
     }
@@ -89,18 +133,16 @@
 .courseData {
 
     height: 360px;
-    width: 310px;
+    width: 280px;
     border-radius: 10px;
     border: 0.5px solid black;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
     background-color: #c6c6f1;
     display: flex;
     align-items: center;
     flex-direction: column;
-   
-   
-    
+    cursor: pointer;
 
 
     .courseImgDiv {
@@ -113,8 +155,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        
+
+
 
         img {
             width: 80%;
@@ -131,30 +173,21 @@
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 700;
     }
-    .courseDesc{
+
+    .courseDesc {
         width: 85%;
         height: 50px;
         margin-top: 10px;
         font-size: 15px;
-        font-family:'Times New Roman', Times, serif;
+        font-family: 'Times New Roman', Times, serif;
         color: rgb(63, 62, 62);
-       
+
     }
 
 }
 
 .courseData:hover {
-  animation: pulse 1s ease-in-out;
-  transform: scale(1.03);
-  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
+    animation: pulse 1s ease-in-out;
     transform: scale(1.03);
-  }
-
+    box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
 }

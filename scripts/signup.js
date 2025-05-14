@@ -1,9 +1,9 @@
 //existing User
 
-// var value = localStorage.getItem("skillupUser")
-// if(value){
-//     window.location.href="../pages/homePage.html"
-// }
+var value = localStorage.getItem("skillupUser")
+if(value){
+    window.location.href="../pages/course.html"
+}
 
 document.getElementById("btn").addEventListener("click", function (event) {
 
