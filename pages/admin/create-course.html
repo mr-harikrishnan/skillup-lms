@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Course</title>
-    <link rel="stylesheet" href="../../styles/courseAddForm.css" />
+    <link rel="stylesheet" href="../../styles/course-create.css" />
 </head>
 
 <body>
@@ -17,93 +17,94 @@
                 <input type="text" placeholder="Course Title" id="courseTitle" />
                 <input type="text" placeholder="Description" id="description" />
                 <input type="text" placeholder="Category" id="category" />
-                <input type="text" placeholder="Thumbnail URL" id="thumbnailUrl" />
+                <input type="text" placeholder="ThumbnailURL" id="thumbnailUrl" />
 
                 <div class="moduleDiv">
 
                     <div class="module">
-
-
                         <h3>Module <span id="moduleCount">1</span></h3>
-                        <input type="text" placeholder="Module 1 Title" />
+                        <input type="text" placeholder="Module Title" class="moduleTitle" />
 
                         <div class="resourcesDiv">
 
                             <div class="resources">
-                                <h4>Resources <span>1</span></h4>
-                                <input type="text" placeholder="Resource 1 Title" />
-                                <input type="text" placeholder="Resource 1 URL" />
-
+                                <h4>Resources <span class="resourceCount">1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" class="resTit" />
+                                <input type="text" placeholder="Resource 1 URL"  class="resUrl"/>
                             </div>
 
                         </div>
-                        <button id="addResources">ADD RESOURCES</button>
 
+                        <button class="addResources">ADD RESOURCES</button>
 
                     </div>
 
-                    
                 </div>
 
-<button id="addModule">ADD MODULE</button>
+                <button id="addModule">ADD MODULE</button>
             </form>
+            <button id="submitBtn">SUBMIT</button>
         </div>
     </div>
 
     <script>
 
-        var addRes = document.getElementById("addResources")
 
-        addRes.addEventListener("click", function (e) {
+        document.addEventListener("click", function (e) {
             e.preventDefault()
-            var resourcesDiv = document.querySelector(".resourcesDiv")
-
-            resourcesDiv.innerHTML += `
-                            <div class="resources">
-                                <h4>Resources <span>1</span></h4>
-                                <input type="text" placeholder="Resource 1 Title" />
-                                <input type="text" placeholder="Resource 1 URL" />
-
-                            </div>
-
-            `
-
-        })
+            if (e.target.classList.contains("addResources")) {
+                e.preventDefault()
+                var module = e.target.closest(".module ")
+                var resourcesDiv = module.querySelector(".resourcesDiv")
+                var resourcesDivCount = resourcesDiv.querySelectorAll(".resources").length + 1
 
 
-      
-        var addMod = document.getElementById("addModule")
-
-        addMod.addEventListener("click", function (e) {
-            e.preventDefault()
-            var moduleDiv = document.querySelector(".moduleDiv")
-
-            moduleDiv.innerHTML += `
-                            <div class="module">
 
 
-                        <h3>Module <span id="moduleCount">1</span></h3>
-                        <input type="text" placeholder="Module 1 Title" />
+                var newResourceHTML = `
+                <div class="resources">
+                    <h4>Resources <span class="resourceCount">${resourcesDivCount}</span></h4>
+                    <input type="text" placeholder="Resource ${resourcesDivCount} Title" class="resTit" />
+                    <input type="text" placeholder="Resource ${resourcesDivCount} URL" class="resUrl" />
+                </div>
+            `;
+
+            resourcesDiv.insertAdjacentHTML("beforeend", newResourceHTML);
+                
+            }
+
+
+            if (e.target.id == "addModule") {
+                e.preventDefault()
+                var moduleDiv = document.querySelector(".moduleDiv")
+                var moduleDivCount = moduleDiv.querySelectorAll(".module").length + 1
+
+                var newModuleHTML= `
+                    <div class="module">
+                        <h3>Module <span id="moduleCount">${moduleDivCount}</span></h3>
+                        <input type="text" placeholder="Module Title" class="moduleTitle" />
 
                         <div class="resourcesDiv">
 
                             <div class="resources">
-                                <h4>Resources <span>1</span></h4>
-                                <input type="text" placeholder="Resource 1 Title" />
-                                <input type="text" placeholder="Resource 1 URL" />
-
+                                <h4>Resources <span class="resourceCount">1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" class="resTit" />
+                                <input type="text" placeholder="Resource 1 URL"  class="resUrl"/>
                             </div>
 
                         </div>
-                        <button id="addResources">ADD RESOURCES</button>
 
+                        <button class="addResources" id="addResources">ADD RESOURCES</button>
 
                     </div>
-            `
+                `
+                moduleDiv.insertAdjacentHTML("beforeend",newModuleHTML)
+            }
 
         })
 
     </script>
+    <script src="../../scripts/course-create.js"></script>
 </body>
 
 </html>

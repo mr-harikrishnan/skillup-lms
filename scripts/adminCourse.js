@@ -18,7 +18,10 @@ async function fetchData() {
 
             var courseData = document.createElement("div");
             courseData.className = "courseData";
-            courseData.setAttribute("id",`${data.id}`)
+            courseData.setAttribute("id", `${data.id}`)
+            courseData.onclick=function(){
+                window.location.href=`/pages/admin/edit-course.html?id=${data.id}`
+            }
             contentDiv.appendChild(courseData)
 
 

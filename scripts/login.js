@@ -2,7 +2,7 @@
 
 var value = localStorage.getItem("skillupUser")
 if(value){
-    window.location.href="../pages/userCourse.html"
+    window.location.href="../pages/user/course.html"
 }
 
 

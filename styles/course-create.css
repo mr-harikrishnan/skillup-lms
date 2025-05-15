@@ -54,6 +54,7 @@ input {
   height: auto;
   padding-bottom: 10px;
   border-radius: 5px;
+  margin-bottom: 20px;
 
   h3 {
     margin-top: 10px;
@@ -111,4 +112,11 @@ button {
   height: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 140px;
 }
+
+#submitBtn{
+  margin-left: 300px;
+  background-color: rgb(41, 181, 135);
+}
+
