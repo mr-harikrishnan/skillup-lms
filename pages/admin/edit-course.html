@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -22,25 +14,80 @@
         <div class="formDiv">
             <h2>Edit Course</h2>
             <form action="">
+
+                <input type="text" placeholder="Course-id" id="courseId" />
                 <input type="text" placeholder="Course Title" id="courseTitle" />
                 <input type="text" placeholder="Description" id="description" />
                 <input type="text" placeholder="Category" id="category" />
                 <input type="text" placeholder="ThumbnailURL" id="thumbnailUrl" />
 
                 <div class="moduleDiv">
-                    
+
                 </div>
 
                 <button id="addModule">ADD MODULE</button>
             </form>
-            <button id="submitBtn">SUBMIT</button>
+            <button id="updateBtn">UPDATE COURSE</button>
         </div>
     </div>
+<script>
 
-    <script src="../../scripts/course-create.js"></script>
+
+        document.addEventListener("click", function (e) {
+            e.preventDefault()
+            if (e.target.classList.contains("addResources")) {
+                e.preventDefault()
+                var module = e.target.closest(".module ")
+                var resourcesDiv = module.querySelector(".resourcesDiv")
+                var resourcesDivCount = resourcesDiv.querySelectorAll(".resources").length + 1
+
+
+
+
+                var newResourceHTML = `
+                <div class="resources">
+                    <h4>Resources <span class="resourceCount">${resourcesDivCount}</span></h4>
+                    <input type="text" placeholder="Resource ${resourcesDivCount} Title" class="resTit" />
+                    <input type="text" placeholder="Resource ${resourcesDivCount} URL" class="resUrl" />
+                </div>
+            `;
+
+            resourcesDiv.insertAdjacentHTML("beforeend", newResourceHTML);
+                
+            }
+
+
+            if (e.target.id == "addModule") {
+                e.preventDefault()
+                var moduleDiv = document.querySelector(".moduleDiv")
+                var moduleDivCount = moduleDiv.querySelectorAll(".module").length + 1
+
+                var newModuleHTML= `
+                    <div class="module">
+                        <h3>Module <span id="moduleCount">${moduleDivCount}</span></h3>
+                        <input type="text" placeholder="Module Title" class="moduleTitle" />
+
+                        <div class="resourcesDiv">
+
+                            <div class="resources">
+                                <h4>Resources <span class="resourceCount">1</span></h4>
+                                <input type="text" placeholder="Resource 1 Title" class="resTit" />
+                                <input type="text" placeholder="Resource 1 URL"  class="resUrl"/>
+                            </div>
+
+                        </div>
+
+                        <button class="addResources" id="addResources">ADD RESOURCES</button>
+
+                    </div>
+                `
+                moduleDiv.insertAdjacentHTML("beforeend",newModuleHTML)
+            }
+
+        })
+
+    </script>
+    <script src="../../scripts/edit-course.js"></script>
 </body>
 
-</html>
-    
-</body>
 </html>
