@@ -189,4 +189,3 @@ async function courseDelete(id) {
 
 }
 
-// courseDelete(courseId)  
