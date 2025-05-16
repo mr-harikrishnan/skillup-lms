@@ -2,7 +2,7 @@
 
 var value = localStorage.getItem("skillupUser")
 if(value){
-    window.location.href="../pages/course.html"
+    window.location.href="../pages/user/course.html"
 }
 
 document.getElementById("btn").addEventListener("click", function (event) {
@@ -113,6 +113,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
                             email: email,
                             name: name,
                             password: password,
+                            role: "USER",
                             enrolledCourses: []
                         };
 

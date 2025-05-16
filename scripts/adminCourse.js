@@ -1,4 +1,27 @@
-console.log(window.location.pathname);
+
+let currentPath = window.location.pathname
+var currentPathSplit = currentPath.split("/")
+var currentRole = currentPathSplit[2].toUpperCase()
+var correctRole = localStorage.getItem("role")
+
+if (currentRole != correctRole) {
+    var allElements = document.body.querySelectorAll('*');
+    allElements.forEach(function (element) {
+        element.remove()
+    })
+    var image = document.createElement("img")
+    image.src = "https://www.orangewebsite.com/articles/wp-content/uploads/2017/04/403.png"
+    image.className = "notAccess"
+    document.body.appendChild(image)
+
+    var btn = document.createElement("a")
+    btn.href = "/pages/admin/course.html"
+    btn.className = "accessBtn"
+    btn.textContent = "Back To Home page"
+    document.body.appendChild(btn)
+}
+
+
 
 
 async function getDataByApi() {
@@ -7,11 +30,13 @@ async function getDataByApi() {
     })
 }
 
+
+
 async function fetchData() {
     try {
         var res = await getDataByApi()
         var datas = await res.json()
-        console.log(datas)
+
 
         datas.forEach(function (data) {
 
@@ -20,8 +45,8 @@ async function fetchData() {
             var courseData = document.createElement("div");
             courseData.className = "courseData";
             courseData.setAttribute("id", `${data.id}`)
-            courseData.onclick=function(){
-                window.location.href=`/pages/admin/edit-course.html?id=${data.id}`
+            courseData.onclick = function () {
+                window.location.href = `/pages/admin/edit-course.html?id=${data.id}`
             }
             contentDiv.appendChild(courseData)
 

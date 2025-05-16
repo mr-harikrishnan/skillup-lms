@@ -12,6 +12,8 @@
 
 }
 
+
+
 .navBarDiv {
     width: 15%;
     height: 100vh;
@@ -119,9 +121,9 @@
     background-color: #9391e3;
     color: white;
     cursor: pointer;
-    
 
-    p{
+
+    p {
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
         color: white;
@@ -191,3 +193,24 @@
     transform: scale(1.03);
     box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+.notAccess {
+    height: 250px;
+    width: 500px;
+    margin-left: 530px;
+    margin-top: 170px;
+}
+
+.accessBtn{
+    background-color: rgb(245, 5, 5);
+    display:inline-block;
+    padding: 7px;
+    border-radius: 5px;
+    position: relative;
+    top: 40px;
+    right: 350px;
+    font-weight: 700;
+    color: white;
+
+}
+
