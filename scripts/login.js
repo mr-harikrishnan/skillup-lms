@@ -88,6 +88,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
                                 
                                 localStorage.setItem("skillup", JSON.stringify(email))
                                 localStorage.setItem("role",resDta.role)
+                                localStorage.setItem("id",resDta.id)
                                 window.location.href="../pages/user/course.html"
                                
                             }
@@ -121,7 +122,7 @@ document.getElementById("btn").addEventListener("click", function (event) {
 
 })
 
-var value = localStorage.getItem("skillup")
-if(value){
-    window.location.href="../pages/user/course.html"
-}
+// var value = localStorage.getItem("skillup")
+// if(value){
+//     window.location.href="../pages/user/course.html"
+// }

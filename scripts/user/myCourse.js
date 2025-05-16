@@ -54,7 +54,7 @@ async function fetchData() {
                     var data = await checkData()
                     var userdata = await data.json()
                     var userEnrolledCourses = userdata.enrolledCourses
-                    if (!userEnrolledCourses.includes(parseInt(courseId))) {
+                    if (userEnrolledCourses.includes(parseInt(courseId))) {
                         contentDiv.appendChild(courseData)
                     }
 

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Course</title>
+    <title>Add Course</title>
     <link rel="stylesheet" href="../../styles/course-create.css" />
 </head>
 
 <body>
-    <a href="./course.html">back</a>
+    <a href="../admin/course.html">back</a>
     <div class="container">
         <div class="formDiv">
             <h2>Add New Course</h2>
@@ -51,7 +51,7 @@
 
 
         document.addEventListener("click", function (e) {
-            e.preventDefault()
+            
             if (e.target.classList.contains("addResources")) {
                 e.preventDefault()
                 var module = e.target.closest(".module ")
@@ -104,7 +104,7 @@
         })
 
     </script>
-    <script src="/scripts/admin/create-course.js"></script>
+    <script src="../../scripts/admin/create-course.js"></script>
 </body>
 
 </html>
