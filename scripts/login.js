@@ -1,9 +1,6 @@
 //existing User
 
-var value = localStorage.getItem("skillupUser")
-if(value){
-    window.location.href="../pages/user/course.html"
-}
+
 
 
 
@@ -123,3 +120,8 @@ document.getElementById("btn").addEventListener("click", function (event) {
 
 
 })
+
+var value = localStorage.getItem("skillup")
+if(value){
+    window.location.href="../pages/user/course.html"
+}
