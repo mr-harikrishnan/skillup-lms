@@ -163,8 +163,8 @@
 
 .notAccess {
     height: 250px;
-    width: 500px;
-    margin-left: 530px;
+    width: 700px;
+    margin-left: 450px;
     margin-top: 170px;
 }
 
@@ -175,7 +175,7 @@
     border-radius: 5px;
     position: relative;
     top: 40px;
-    right: 350px;
+    right: 490px;
     font-weight: 700;
     color: white;
 

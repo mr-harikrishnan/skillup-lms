@@ -45,14 +45,14 @@ async function fetchData() {
             var courseData = document.createElement("div");
             courseData.className = "courseData";
             courseData.setAttribute("id", `${data.id}`)
-            courseData.onclick = function () {
-                window.location.href = `/pages/admin/edit-course.html?id=${data.id}`
-            }
             contentDiv.appendChild(courseData)
 
 
             var courseImgDiv = document.createElement("div");
             courseImgDiv.className = "courseImgDiv";
+            courseImgDiv.onclick = function () {
+                window.location.href = `/pages/admin/course-details.html?id=${data.id}`
+            }
             courseData.appendChild(courseImgDiv);
 
 
@@ -79,6 +79,24 @@ async function fetchData() {
             descP.textContent = `${data.description}`;
             courseDesc.appendChild(descP);
 
+            var editDltDiv = document.createElement("div")
+            editDltDiv.className = "editDltDiv"
+            courseData.appendChild(editDltDiv)
+
+            var editDiv = document.createElement("div")
+            editDiv.className = "editDiv"
+            editDiv.onclick = function () {
+                window.location.href = `/pages/admin/edit-course.html?id=${data.id}`
+            }
+            editDltDiv.appendChild(editDiv)
+
+            var dltDiv = document.createElement("div")
+            dltDiv.className = "dltDiv"
+            dltDiv.onclick = function () {
+                deleteCourse(data.id)
+            }
+            editDltDiv.appendChild(dltDiv)
+
         })
 
 
@@ -88,4 +106,28 @@ async function fetchData() {
     }
 }
 fetchData()
+
+
+
+
+async function deleteCourse(id) {
+
+    try {
+        var dltresponse = await fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/courses/${id}`, {
+            method: "DELETE"
+        })
+
+        if (!dltresponse.ok) {
+            throw new Error('Failed to delete');
+        }
+
+        var data = await dltresponse.json()
+        console.log("data delete", data)
+        location.reload();
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
 

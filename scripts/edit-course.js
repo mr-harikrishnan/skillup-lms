@@ -133,9 +133,6 @@ updateBtn.addEventListener("click", function (e) {
 
     console.log(courseDataObj)
 
-    // --------------------course before update delete function call-----------------------------------
-
-
     async function courseUpdate(courseId, courseDataObj) {
         try {
             const response = await fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/courses/${courseId}`, {
@@ -169,23 +166,5 @@ updateBtn.addEventListener("click", function (e) {
 
 // -----------------------------------------------------------------------------------------------
 
-async function courseDelete(id) {
 
-    try {
-        var dltresponse = await fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/courses/${id}`, {
-            method: "DELETE"
-        })
-
-        if (!dltresponse.ok) {
-            throw new Error('Failed to delete');
-        }
-
-        var data = await dltresponse.json()
-        console.log("data delete", data)
-
-    } catch (error) {
-        console.log(error)
-    }
-
-}
 

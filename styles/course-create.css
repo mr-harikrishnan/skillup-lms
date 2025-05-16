@@ -120,3 +120,10 @@ button {
   background-color: rgb(41, 181, 135);
 }
 
+.backIcon{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+}
+
