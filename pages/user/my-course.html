@@ -9,8 +9,8 @@
 </head>
 
 <body>
+   
     <div class="container">
-
         <div class="navBarDiv">
             <div class="log">
                 <div class="logoImg"><img src="../../assets/skillUpImg.png" alt=""></div>
@@ -25,8 +25,9 @@
                     <a href="./course.html">Home</a>
                 </div>
                 <div class="navLink">
-                    <a href="./myCourse.html">My Course</a>
+                    <a href="./my-course.html">My Course</a>
                 </div>
+                <div class="backBtn" id="backBtn"><img src="/assets/left-arrow.png" alt=""></div>
 
             </div>
 
@@ -35,7 +36,7 @@
 
 
         <div class="contentDiv">
-
+ 
 
             <!-- <div class="courseData">
                 <div class="courseImgDiv">
@@ -57,6 +58,11 @@
 
     </div>
     <script src="/scripts/user/my-course.js"></script>
+    <script>
+        document.getElementById("backBtn").addEventListener("click",function(){
+            history.back()
+        })
+    </script>
 </body>
 
 </html>

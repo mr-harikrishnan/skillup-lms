@@ -23,6 +23,7 @@
       Logout
     </button>
   </div>
+   <div class="backBtn" id="backBtn"><img src="/assets/left-arrow.png" alt=""></div>
 <script>
   var emailID=localStorage.getItem("skillupEmail")
   var role=localStorage.getItem("role")
@@ -40,6 +41,10 @@
 
 
   })
+
+  document.getElementById("backBtn").addEventListener("click",function(){
+            history.back()
+        })
   
   
 </script>

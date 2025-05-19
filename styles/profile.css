@@ -83,3 +83,20 @@ body {
   height: 18px;
   stroke: #fff;
 }
+
+.backBtn{
+   
+    
+    img{
+        height: 40px;
+        width:40;
+        cursor: pointer;
+        position: relative;
+        top: 300px;
+        right: 850px;
+        border: 2px solid white;
+        border-radius: 30px;
+        padding: 5px;
+
+    }
+}

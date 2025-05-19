@@ -92,6 +92,14 @@
     }
 }
 
+.navLink:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 1px solid #9391e3;
+    background-color: #807eeb;
+    padding: 1px 5px 1px;
+    border-radius: 10px;
+}
+
 /* ------------------------------------------------ */
 
 .allCourses {
