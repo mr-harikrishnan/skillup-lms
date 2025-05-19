@@ -26,6 +26,8 @@ if (currentRole != correctRole) {
     document.body.appendChild(btn)
 }
 
+// ------------------------^ asesss check functions------------------------------------------------------
+
 
 
 async function getDataByApi() {
@@ -34,8 +36,25 @@ async function getDataByApi() {
     })
 }
 
+async function checkData() {
+    return fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/users/${localStorage.getItem("id")}`)
+}
+
+async function checkEnrolled() {
+    try {
+        var data = await checkData()
+        var userdata = await data.json()
+        return userEnrolledCourses = userdata.enrolledCourses
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 async function fetchData() {
     try {
+        var userEnrolledCourses = await checkEnrolled()
         var res = await getDataByApi()
         var datas = await res.json()
         console.log(datas)
@@ -48,27 +67,11 @@ async function fetchData() {
             courseData.className = "courseData";
             // ----------------------only not enrolled div are append function--------------------------------------------
 
-            async function checkData() {
-                return fetch(`https://68218af0259dad2655af8849.mockapi.io/skillup/users/${localStorage.getItem("id")}`)
+            if (!userEnrolledCourses.includes(parseInt(data.id))) {
+                contentDiv.appendChild(courseData)
             }
-            async function checkEnrolled(courseId) {
-                try {
-                    var data = await checkData()
-                    var userdata = await data.json()
-                    var userEnrolledCourses = userdata.enrolledCourses
-                    if (!userEnrolledCourses.includes(parseInt(courseId))) {
-                        contentDiv.appendChild(courseData)
-                    }
-
-                } catch (error) {
-                    console.log(error)
-                }
-            }
-            checkEnrolled(data.id)
 
             // ----------------------------------------------------------------------
-
-
 
 
 
