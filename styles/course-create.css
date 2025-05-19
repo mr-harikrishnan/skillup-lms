@@ -148,3 +148,21 @@ button {
 cursor: pointer;
 
 }
+
+    .backBtn{
+   
+    
+    img{
+        height: 25px;
+        width:25;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+        left: 60px;
+        border: 2px solid white;
+        border-radius: 30px;
+        padding: 5px;
+        background-color: #087EA4;
+
+    }
+}

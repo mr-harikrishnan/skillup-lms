@@ -9,6 +9,10 @@
 </head>
 
 <body>
+         <div class="backBtn" id="backBtn"><img src="/assets/left-arrow.png" alt=""></div>
+   
+
+
     <div class="container">
 
         <div class="formDiv">
@@ -31,6 +35,10 @@
         </div>
     </div>
 <script>
+
+        document.getElementById("backBtn").addEventListener("click", function () {
+            history.back()
+        })
 
 
         document.addEventListener("click", function (e) {
