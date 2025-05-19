@@ -1,0 +1,122 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  color: #333;
+}
+
+.course-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+}
+
+.course-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-logo {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.course-info h1 {
+  font-size: 2rem;
+  color: #087ea4;
+  margin: 0;
+}
+
+.course-category span {
+  font-weight: bold;
+  color: #444;
+}
+
+.course-description, .course-modules, .course-extras {
+  margin-bottom: 2rem;
+}
+
+.course-description h2,
+.course-modules h2,
+.course-extras h2 {
+  color: #087ea4;
+  margin-bottom: 0.5rem;
+}
+
+.module {
+  background: #f9fbfd;
+  border-left: 4px solid #087ea4;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+.module h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2e3c47;
+}
+
+.module ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.module ul li {
+  margin: 0.5rem 0;
+}
+
+.module ul li a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.module ul li a:hover {
+  color: #ff6600;
+}
+
+.course-extras {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.box {
+  background: #e6f7ff;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.box ul {
+  padding-left: 1.2rem;
+}
+
+.box ul li {
+  margin-bottom: 0.5rem;
+}
+
+.enrollBtn{
+    background-color: #087EA4;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    color:white;
+    margin-left: 380px;
+
+}
+
+
