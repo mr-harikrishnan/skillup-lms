@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+  <!-- <button onclick="goback()">hvi</button> -->
+
+  <div class="profile-card">
+    <img src="https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png" alt="Profile Image">
+    <h2>Harikrishnan</h2>
+    <p><strong>Email:</strong><span id="emailId"></span></p>
+    <p ><strong>Role:</strong><span id= "role"></span></p>
+    
+    <button class="logout-btn" id="logOutBtn">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 002 2h5a2 2 0 002-2V7a2 2 0 00-2-2h-5a2 2 0 00-2 2v1" />
+      </svg>
+      Logout
+    </button>
+  </div>
+<script>
+  var emailID=localStorage.getItem("skillupEmail")
+  var role=localStorage.getItem("role")
+
+  document.getElementById("emailId").textContent=`${emailID}`
+  document.getElementById("role").textContent=`${role}`
+
+  document.getElementById("logOutBtn").addEventListener("click",function(){
+    localStorage.clear()
+    window.location.href="./login.html"
+
+    function goback(){
+      window.history.back()
+    }
+
+
+  })
+  
+  
+</script>
+</body>
+</html>

@@ -82,12 +82,13 @@ document.getElementById("btn").addEventListener("click", function (event) {
                         if (resDta.password == password) {
                             if(resDta.role == "ADMIN"){
                                 window.location.href="../pages/admin/course.html"
-                                localStorage.setItem("skillup", JSON.stringify(email))
+                                localStorage.clear()
+                                localStorage.setItem("skillupEmail", email)
                                 localStorage.setItem("role",resDta.role)
                             }
                             else{
-                                
-                                localStorage.setItem("skillup", JSON.stringify(email))
+                                localStorage.clear()
+                                localStorage.setItem("skillupEmail", email)
                                 localStorage.setItem("role",resDta.role)
                                 localStorage.setItem("id",resDta.id)
                                 window.location.href="../pages/user/course.html"
