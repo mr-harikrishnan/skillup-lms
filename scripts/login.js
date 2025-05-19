@@ -85,10 +85,12 @@ document.getElementById("btn").addEventListener("click", function (event) {
                                 localStorage.clear()
                                 localStorage.setItem("skillupEmail", email)
                                 localStorage.setItem("role",resDta.role)
+                                localStorage.setItem("userName",resDta.name)
                             }
                             else{
                                 localStorage.clear()
                                 localStorage.setItem("skillupEmail", email)
+                                localStorage.setItem("userName",resDta.name)
                                 localStorage.setItem("role",resDta.role)
                                 localStorage.setItem("id",resDta.id)
                                 window.location.href="../pages/user/course.html"
