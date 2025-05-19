@@ -18,7 +18,9 @@ if (currentRole != correctRole) {
     document.body.appendChild(image)
 
     var btn = document.createElement("a")
-    btn.href = "/pages/admin/course.html"
+    btn.onclick = function () {
+        history.back()
+    }
     btn.className = "accessBtn"
     btn.textContent = "Back To Home page"
     document.body.appendChild(btn)

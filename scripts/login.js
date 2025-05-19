@@ -1,5 +1,5 @@
 //existing User
-var value = localStorage.getItem("skillup")
+var value = localStorage.getItem("skillupEmail")
 if(value){
     window.location.href="../pages/user/course.html"
 }

@@ -1,3 +1,31 @@
+let currentPath = window.location.pathname
+var currentPathSplit = currentPath.split("/")
+var currentRole = currentPathSplit[2].toUpperCase()
+var correctRole = localStorage.getItem("role")
+
+if (currentRole != correctRole) {
+    var allElements = document.body.querySelectorAll('*');
+    allElements.forEach(function (element) {
+        element.remove()
+    })
+    var image = document.createElement("img")
+    image.src = "https://www.orangewebsite.com/articles/wp-content/uploads/2017/04/403.png"
+    image.className = "notAccess"
+    document.body.appendChild(image)
+
+    var btn = document.createElement("a")
+    btn.onclick=function(){
+        history.back()
+    }
+    btn.className = "accessBtn"
+    btn.textContent = "Back To Home page"
+    document.body.appendChild(btn)
+}
+
+
+
+
+
 var submitBtn = document.getElementById("submitBtn")
 
 var courseDataObj = {
