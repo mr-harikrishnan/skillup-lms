@@ -4,8 +4,8 @@ var value = localStorage.getItem("role")
 if(value=="USER"){
     window.location.href="../pages/user/course.html"
 }
-else{
-     window.location.href="../pages/admin/course.html"
+else if(value == "ADMIN"){
+    window.location.href="../pages/admin/course.html"
 }
 
 document.getElementById("btn").addEventListener("click", function (event) {
